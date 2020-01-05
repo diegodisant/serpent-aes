@@ -1,2 +1,40 @@
-# serpent-aes
-Golang serpent AES implementation
+# Serpent AES 128 bit block cypher (Go Implementation)
+
+## Usage with docker
+
+Build docker serpent-aes test environment for golang
+
+```bash
+./build-docker.sh
+
+# inside container execute
+./finish-build.sh
+```
+
+Will create an interactive session with container
+
+### To encrypt
+
+> NOTE: IT'S IMPORTANT FOR ENCRYPTION AND DECRYPTION TO QUOTE TEXT FOR KEY AND TEXT "PLAIN-TEXT" "USER-KEY"
+
+```bash
+serpent-cli (encrypt|e) "PLAIN-TEXT" "USER-KEY"
+
+-- PLAIN TEXT --
+data
+
+-- ENCRYPTED TEXT --
+TVRBd01EQXhNVEV4TURFeE1ERXdNVEF4TURFeE1UQXdNVEF3TVRFd01EQXdNREF4TVRBd01EQXdNVEF4TURBd01URXdNVEF3TVRBeE1EQXhNVEV3TURBeE1UQXdNREF4TVRBd01EQXdNREV3TVRFd01UQXhNVEF4TVRFeE1EQXdNVEV3TURBd01ERXhNREF3TVRBd01URXdNREV4TURBeE1URXdNVEV4TURFPQ
+```
+
+### To decrypt
+
+```bash
+serpent-cli (decrypt|d) "ENCRYPTED-TEXT" "USER-KEY"
+
+-- ENCRYPTED TEXT --
+TVRBd01EQXhNVEV4TURFeE1ERXdNVEF4TURFeE1UQXdNVEF3TVRFd01EQXdNREF4TVRBd01EQXdNVEF4TURBd01URXdNVEF3TVRBeE1EQXhNVEV3TURBeE1UQXdNREF4TVRBd01EQXdNREV3TVRFd01UQXhNVEF4TVRFeE1EQXdNVEV3TURBd01ERXhNREF3TVRBd01URXdNREV4TURBeE1URXdNVEV4TURFPQ
+
+-- DECRYPTED TEXT --
+data
+```

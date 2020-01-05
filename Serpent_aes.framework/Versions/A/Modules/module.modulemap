@@ -1,0 +1,8 @@
+framework module "Serpent_aes" {
+	header "ref.h"
+    header "Serpent_aes.objc.h"
+    header "Universe.objc.h"
+    header "Serpent_aes.h"
+
+    export *
+}
