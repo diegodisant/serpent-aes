@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ROOT_DIR=../
+
 echo "Building serpent_aes framework for iOS ....."
 rm Serpent_aes.framework
 mv serpent-cli.go serpent-cli.go-rr

@@ -14,12 +14,11 @@ var app = cli.NewApp()
 func registerAppInfo() {
 	app.Name = "Serpent CLI Application"
 	app.Usage = "CLI Application used to encrypt and decrypt text with serpent aes"
-	app.Author = "captaincode0"
 	app.Version = "0.0.1"
 }
 
 func registerAppCommands() {
-	app.Commands = []cli.Command{
+	app.Commands = [](*cli.Command){
 		{
 			Name:    scli.EncryptCommand.Name,
 			Aliases: scli.EncryptCommand.Aliases,
