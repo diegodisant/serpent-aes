@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  serpent:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes: 
+      - ./:/serpent_aes
